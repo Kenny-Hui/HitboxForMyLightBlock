@@ -17,6 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LightBlockMixin {
     @Inject(method = "useWithoutItem", at = @At("HEAD"), cancellable = true)
     public void mustHoldLightBlockToChangeLevel(BlockState blockState, Level level, BlockPos blockPos, Player player, BlockHitResult blockHitResult, CallbackInfoReturnable<InteractionResult> cir) {
-        if(!player.isHolding(Items.LIGHT)) cir.setReturnValue(InteractionResult.TRY_WITH_EMPTY_HAND);
+        if(!player.isHolding(Items.LIGHT)) cir.setReturnValue(InteractionResult.PASS);
     }
 }

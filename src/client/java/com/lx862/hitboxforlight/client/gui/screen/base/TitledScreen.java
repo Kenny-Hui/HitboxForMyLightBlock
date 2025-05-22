@@ -1,9 +1,9 @@
 package com.lx862.hitboxforlight.client.gui.screen.base;
 
 import com.lx862.hitboxforlight.client.gui.GuiHelper;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 
 public abstract class TitledScreen extends ScreenBase {
@@ -22,9 +22,9 @@ public abstract class TitledScreen extends ScreenBase {
 
         guiGraphics.fill(0, 0, width, getStartY(), 0x66000000);
 
-//            RenderSystem.enableBlend();
-        guiGraphics.blit(RenderType::guiTextured, HEADER_SEPARATOR, 0, getStartY(), 0, 0, width, 2, 1, 2);
-//            RenderSystem.disableBlend();
+        RenderSystem.enableBlend();
+        guiGraphics.blit(HEADER_SEPARATOR, 0, getStartY(), 0, 0, width, 2, 1, 2);
+        RenderSystem.disableBlend();
     }
 
     public void drawCustomBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float tickDelta) {

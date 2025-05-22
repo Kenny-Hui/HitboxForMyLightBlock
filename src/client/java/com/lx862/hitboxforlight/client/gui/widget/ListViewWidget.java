@@ -89,7 +89,7 @@ public class ListViewWidget extends AbstractScrollViewWidget {
 
     @Override
     public void renderContent(GuiGraphics guiGraphics, int mouseX, int mouseY, float tickDelta) {
-        elapsed += (Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaTicks() / 20);
+        elapsed += (Minecraft.getInstance().getTimer().getGameTimeDeltaTicks() / 20);
 
         int incY = 0;
         for (AbstractListItem abstractListItem : displayedEntryList) {
