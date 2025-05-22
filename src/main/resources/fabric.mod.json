@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "hitboxformylightblock",
+  "version": "${version}",
+  "name": "Hitbox For My Light Block!",
+  "description": "Add Hitbox for the Minecraft Light Block even if not holding the item!",
+  "authors": [
+    {
+      "name": "LX86"
+    }
+  ],
+  "contact": {
+    "homepage": "https://github.com/Kenny-Hui/HitboxForMyLightBlock",
+    "issues": "https://github.com/Kenny-Hui/HitboxForMyLightBlock/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/hitboxformylightblock/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.lx862.hitboxforlight.client.HitboxForMyLightBlockClient"
+    ],
+    "main": [
+      "com.lx862.hitboxforlight.HitboxForMyLightBlock"
+    ],
+    "modmenu": [
+      "com.lx862.hitboxforlight.client.ModMenuImpl"
+    ]
+  },
+  "mixins": [
+    "hitboxformylightblock.mixins.json",
+    {
+      "config": "hitboxformylightblock.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabric": "*",
+    "fabricloader": ">=0.16.10",
+    "minecraft": ">=${minecraft_version}"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
